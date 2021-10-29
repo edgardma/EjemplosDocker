@@ -13,6 +13,9 @@ Este código se ha probado sobre el siguiente software:
 * Docker Desktop v4.1.1
   
   * Kubernetes v1.21.5
+- Otros:
+  
+  - [Go for Windows](https://golang.org/doc/install)
 
 ### Ejecutar el aplicativo go
 
@@ -270,8 +273,6 @@ kubectl delete pod api-hello-deployment-84b694d899-66s5k
 ```
 
 Y la aplicación debe seguir funcionando sin problemas.
-
-
 
 ***Fuente:***
 
