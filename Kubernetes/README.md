@@ -56,6 +56,32 @@ Revisar si el servicio `kubelet` este funcionando correctamente:
 sudo systemctl status kubelet
 ```
 
+Finalmente, si todo se ha ejecutado sin problemas, ejecutar la siguientes sentencias:
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+Y verificamos los `namespaces` de Kubernetes:
+
+```
+kubectl get namespaces
+```
+
+ El cual debe devolver un resultado similar al siguiente:
+
+```
+NAME              STATUS   AGE
+default           Active   2d1h
+kube-node-lease   Active   2d1h
+kube-public       Active   2d1h
+kube-system       Active   2d1h
+```
+
+
+
 ## Posibles errores:
 
 Primero, verificar el estado del servicio `kubelet` con las siguientes sentencias:
