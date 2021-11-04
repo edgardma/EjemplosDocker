@@ -80,8 +80,6 @@ kube-public       Active   2d1h
 kube-system       Active   2d1h
 ```
 
-
-
 ## Posibles errores:
 
 Primero, verificar el estado del servicio `kubelet` con las siguientes sentencias:
@@ -133,5 +131,12 @@ Y finalmente, configurar el servicio en el servidor principal:
 ```
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
+
+> Si al momento de reiniciar el equipo el servicio `kubelet` no funciona, ejecutar los siguientes sentencias:
+> 
+> ```
+> sudo swapoff -a
+> sudo systemctl daemon-reload
+> ```
 
 
