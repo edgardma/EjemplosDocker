@@ -29,6 +29,8 @@ sudo docker run hello-world
 
 *Fuente: [Install Docker Engine on Ubuntu | Docker Documentation](https://docs.docker.com/engine/install/ubuntu/)*
 
+
+
 ## Ejemplos de contenedores Docker:
 
 ### Oracle XE 11g
@@ -36,7 +38,21 @@ sudo docker run hello-world
 Para tener un contenedor con Oracle XE 11g ejecutar las siguientes sentencias (probado tanto Windows como en Ubuntu): 
 
 ```shell
+## Windows
 docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
+
+## Ubuntu
+sudo docker run -d -p 49161:1521 oracleinanutshell/oracle-xe-11g
+```
+
+Para ejecutar el contenedor, primero ejecutar la sentencia `docker ps -a` y copiar el nombre del contenedor, luego, ejecutar la siguiente sentencia:
+
+```shell
+## Windows
+docker start [NOMBRE_CONTEDOR]
+
+## Ubuntu
+sudo docker start [NOMBRE_CONTEDOR]
 ```
 
 Y para conectarse a la base de datos:
