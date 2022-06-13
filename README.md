@@ -33,7 +33,7 @@ sudo docker run hello-world
 
 ### Oracle XE 11g
 
-Para tener un contenedor con Oracle XE 11g ejecutar las siguientes sentencias (probado tanto Windows como en Ubuntu): 
+Para tener un contenedor con Oracle XE 11g ejecutar las siguientes sentencias (*probado tanto Windows como en Ubuntu*): 
 
 ```shell
 ## Windows
@@ -65,11 +65,9 @@ password: oracle
 
 *Fuente: [Docker Hub](https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g)*
 
-
-
 ### MySQL Server
 
-Para tener un contenedor con una la versión comunitaria mas reciente de MySQL Server, ejecutar la siguiente sentencia:
+Para tener un contenedor con una la versión comunitaria mas reciente de MySQL Server, ejecutar la siguiente sentencia (*probado tanto Windows como en Ubuntu*):
 
 ```shell
 sudo docker run -d -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
@@ -81,11 +79,11 @@ En donde:
 
 - `--name`: el nombre del contenedor.
 
-- `-e`: Para pasarle parámetros de configuración del contenedor, en este caso, la clave.
+- `-e`: Para pasar parámetros de configuración del contenedor, en este caso, la clave.
 
 - `-p`: El puerto para acceder desde la máquina local.
 
-- `mysql`: Es el nombre de la imagen que ha descargado para crear el contendor.
+- `mysql`: Es el nombre de la imagen que ha descargado para crear el contenedor.
 
 Para conectar al servidor desde la máquina local, se puede usar los siguientes parámetros:
 
@@ -98,8 +96,8 @@ password: secret
 
 *Fuente:* 
 
-*[Docker Hub](https://hub.docker.com/r/mysql/mysql-server)*
+* *[Docker Hub](https://hub.docker.com/r/mysql/mysql-server)*
 
-*[Como crear un contenedor con Docker-Mysql y persistir la información](https://platzi.com/tutoriales/1432-docker/3268-como-crear-un-contenedor-con-docker-mysql-y-persistir-la-informacion/)*
+* *[Como crear un contenedor con Docker-Mysql y persistir la información](https://platzi.com/tutoriales/1432-docker/3268-como-crear-un-contenedor-con-docker-mysql-y-persistir-la-informacion/)*
 
-*[Práctica 5. Creación de un contenedor Docker con MySQL Server](https://josejuansanchez.org/bd/practica-05/index.html)*
+* *[Práctica 5. Creación de un contenedor Docker con MySQL Server](https://josejuansanchez.org/bd/practica-05/index.html)*
