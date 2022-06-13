@@ -29,6 +29,57 @@ sudo docker run hello-world
 
 *Fuente: [Install Docker Engine on Ubuntu | Docker Documentation](https://docs.docker.com/engine/install/ubuntu/)*
 
+## Sentencias básicas
+
+A continuación se listan las sentencias mas usadas en `Docker` (para el caso de Windows quitar la sentencia `sudo` en el caso de ser usadas fuera del WSL):
+
+```bash
+## Listar el contenido:
+sudo docker container ls -a
+
+## Listar las imágenes:
+sudo docker image ls
+sudo docker ps -a
+
+## Crear una imagen con un nombre específico:
+sudo docker run --name hola hello-world
+
+## Listar las imágenes:
+sudo docker image ls
+sudo docker images
+
+## Ejecutar un contenedor con NGinx:
+sudo docker run -p 88:80 nginx
+
+## Para ejecutar un contenedor sin log en la consola:
+sudo docker run -p 88:80 -d nginx
+
+## Para ver el log de un contenedor:
+sudo docker logs [ID_CONTENEDOR]
+
+## Para ver el log de un contenedor en línea:
+sudo docker logs [ID_CONTENEDOR] -f
+
+## Ejecutar una sentencia dentro del contenedor:
+sudo docker exec -it [ID_CONTENEDOR] nginx -h
+sudo docker exec -it [ID_CONTENEDOR] nginx -V
+
+## Entrar a la consola del contenedor:
+sudo docker exec -it [ID_CONTENEDOR] bash
+
+## También funciona:
+sudo docker exec -i -t [ID_CONTENEDOR] /bin/bash
+
+## Parar la ejecución de un contenedor:
+sudo docker stop [ID_CONTENEDOR]/[NOMBRE_CONTENEDOR]
+
+## Iniciar la ejecución de un contedor:
+sudo docker start [ID_CONTENEDOR]/[NOMBRE_CONTENEDOR]
+
+## Descargar la última versión de la imagen de Alpine:
+sudo docker pull alpine
+```
+
 ## Ejemplos de contenedores Docker:
 
 ### Oracle XE 11g
