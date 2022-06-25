@@ -134,7 +134,7 @@ En donde:
 
 - `-p`: El puerto para acceder desde la máquina local.
 
-- `mysql`: Es el nombre de la imagen que ha descargado para crear el contenedor.
+- `mysql-db`: Es el nombre de la imagen que ha descargado para crear el contenedor.
 
 Para conectar al servidor desde la máquina local, se puede usar los siguientes parámetros:
 
@@ -152,3 +152,38 @@ password: secret
 * *[Como crear un contenedor con Docker-Mysql y persistir la información](https://platzi.com/tutoriales/1432-docker/3268-como-crear-un-contenedor-con-docker-mysql-y-persistir-la-informacion/)*
 
 * *[Práctica 5. Creación de un contenedor Docker con MySQL Server](https://josejuansanchez.org/bd/practica-05/index.html)*
+
+
+
+### SQL Server Express 2019
+
+Para tener un contenedor con una la versión Express de SQL Server Express 2019, ejecutar la siguiente sentencia (*probado tanto Windows como en Ubuntu*):
+
+```bash
+sudo docker run -d -p 1433:1433 --name sqlserver-db -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password_SA" -e "MSSQL_PID=Express" mcr.microsoft.com/mssql/server:2019-latest
+```
+
+En donde:
+
+- `-d`: para ejecutar el contenedor en segundo plano.
+
+- `--name`: el nombre del contenedor.
+
+- `-e`: Para pasar parámetros de configuración del contenedor, en este caso, la clave.
+
+- `-p`: El puerto para acceder desde la máquina local (*he probado con un puerto distinto al `1433` pero he tenido problemas al momento de conectarme con las herramientas cliente por lo que he mantenido ese puerto*).
+
+- `sqlserver-db`: Es el nombre de la imagen que ha descargado para crear el contenedor.
+
+Para conectar al servidor desde la máquina local, se puede usar los siguientes parámetros (se ha probado tanto `SSMS` y el `Azure Data Studio`):
+
+```
+hostname: localhost
+port: 1433
+username: sa
+password: Password_SA
+```
+
+*Fuente:*
+
+* *[Docker Hub](https://hub.docker.com/_/microsoft-mssql-server)*
