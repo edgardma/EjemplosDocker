@@ -116,6 +116,42 @@ password: oracle
 
 *Fuente: [Docker Hub](https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g)*
 
+### Oracle 18c
+
+*Nota: la imagen pesa 5.89GB*
+
+Clonar el siguiente repositorio:
+
+```shell
+git clone https://github.com/oracle/docker-images.git
+```
+
+Ir a la carpeta `/docker-images/OracleDatabase/SingleInstance/dockerfiles`
+
+```shell
+cd /docker-images/OracleDatabase/SingleInstance/dockerfiles
+```
+
+Bajar la imagen, para lo cual ejecutar la siguiente sentencia:
+
+```shell
+./buildDockerImage.sh -v 18.4.0 -x -i
+```
+
+Para verificar, ejecutar:
+
+```shell
+docker images
+```
+
+Para ejecutar el contenedor, se debe ejecutar la siguiente sentencia:
+
+```shell
+docker run --name OracleXE18 --shm-size=1g -p 49162:1521 -p 9080:8080 -e ORACLE_PWD=PasswordOracle12 oracle/database:18.4.0-xe
+```
+
+*Fuente: [docker-images/README.md at main · oracle/docker-images · GitHub](https://github.com/oracle/docker-images/blob/main/OracleDatabase/SingleInstance/README.md)*
+
 ### MySQL Server
 
 Para tener un contenedor con una la versión comunitaria mas reciente de MySQL Server, ejecutar la siguiente sentencia (*probado tanto Windows como en Ubuntu*):
@@ -185,8 +221,6 @@ password: secret
 *Fuente:*
 
 * *[Docker Hub](https://hub.docker.com/_/microsoft-mssql-server)*
-
-
 
 ### PostgreSQL
 
