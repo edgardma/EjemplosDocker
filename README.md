@@ -251,6 +251,22 @@ username: postgres
 password: secret
 ```
 
+Para conectarse desde la línea de comando desde Ubuntu, se debe instalar lo siguiente:
+
+```shell
+sudo apt install postgresql-client-common
+
+sudo apt install postgresql-client
+```
+
+Y para conectarse al servidor, utilizar la siguiente sentencia:
+
+```shell
+psql -h 127.0.0.1 -p 54320 -U postgres postgres
+```
+
+Para validar se puede ejecutar la sentencia `\dt`.
+
 *Fuente:*
 
 - *[Docker Hub](https://hub.docker.com/_/postgres)*
