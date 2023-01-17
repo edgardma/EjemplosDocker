@@ -120,7 +120,7 @@ password: oracle
 
 *Nota: la imagen pesa 5.89GB*
 
-Clonar el siguiente repositorio:
+Clonar el siguiente repositorio (desde Windows se puede usar WSL2):
 
 ```shell
 git clone https://github.com/oracle/docker-images.git
