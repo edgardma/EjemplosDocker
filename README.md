@@ -160,6 +160,15 @@ Para tener un contenedor con una la versión comunitaria mas reciente de MySQL S
 sudo docker run -d -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
 ```
 
+Para el caso de una Macbook M1, ejecutar la siguiente sentencia:
+
+```shell
+## Pull
+docker pull arm64v8/mysql
+## Crear
+docker run -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret -d arm64v8/mysql
+```
+
 En donde:
 
 - `-d`: para ejecutar el contenedor en segundo plano.
