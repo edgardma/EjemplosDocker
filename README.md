@@ -169,6 +169,8 @@ docker pull arm64v8/mysql
 docker run -p 33060:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret -d arm64v8/mysql
 ```
 
+*Fuente: [Docker](https://hub.docker.com/r/arm64v8/mysql)*
+
 En donde:
 
 - `-d`: para ejecutar el contenedor en segundo plano.
