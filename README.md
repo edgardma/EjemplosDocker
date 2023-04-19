@@ -281,3 +281,12 @@ Para validar se puede ejecutar la sentencia `\dt`.
 *Fuente:*
 
 - *[Docker Hub](https://hub.docker.com/_/postgres)*
+
+## MongoDB
+
+Para tener un contenedor con MongoDB se debe ejecutar la siguiente sentencia:
+
+```shell
+## Mac M1
+sudo docker run -p 27017:27017 --name mongodb-desa -d arm64v8/mongo:6.0.5-jammy
+```
