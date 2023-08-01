@@ -247,17 +247,25 @@ Para instalar una versión específica, se puede especificar la versión que se 
 sudo docker run -d -p 54320:5432 --name posgre-db -e POSTGRES_PASSWORD=secret postgres:15.3
 ```
 
+Si necesitan instalar PostgreSQL con el complemento PostGIS, se puede ejecutar la siguiente sentencia (el puerto por defecto se ha cambiado al `54321`):
+
+```bash
+sudo docker run -p 54321:5432 --name posgis-db -e POSTGRES_PASSWORD=secret -d postgis/postgis:15-3.3
+```
+
+Con la sentencia `SELECT postgis_full_version();` se puede validar si se tiene instalado el complemento.
+
 En donde:
 
 - `-d`: para ejecutar el contenedor en segundo plano.
 
 - `--name`: el nombre del contenedor.
 
-- `-e`: Para pasar parámetros de configuración del contenedor, en este caso, la clave.
+- `-e`: Para pasar parámetros de configuración del contenedor, en este caso, la clave (luego de la propiedad `POSTGRES_PASSWORD`).
 
-- `-p`: El puerto para acceder desde la máquina local (*he probado con un puerto distinto al `54320` pero he tenido problemas al momento de conectarme con las herramientas cliente por lo que he mantenido ese puerto*).
+- `-p`: El puerto para acceder desde la máquina local (*he probado con un puerto distinto al `54320/54321` pero he tenido problemas al momento de conectarme con algunas herramientas cliente*).
 
-- `posgre-db`: Es el nombre de la imagen que ha descargado para crear el contenedor.
+- `posgre-db / posgis-db`: Es el nombre de la imagen que ha descargado para crear el contenedor.
 
 Para conectar al servidor desde la máquina local, se puede usar los siguientes parámetros:
 
@@ -296,3 +304,19 @@ Para tener un contenedor con MongoDB se debe ejecutar la siguiente sentencia:
 ## Mac M1
 sudo docker run -p 27017:27017 --name mongodb-desa -d arm64v8/mongo:6.0.5-jammy
 ```
+
+## GeoServer
+
+Para tener un contenedor con GeoServer se debe ejecutar la siguiente sentencia:
+
+```bash
+sudo docker pull docker.osgeo.org/geoserver:2.23.1
+
+sudo docker run -d -p 8081:8080 --name geoserver docker.osgeo.org/geoserver:2.23.1
+```
+
+Para validar, se puede ingresar en un navegador a la siguiente ruta `http://localhost:8081/geoserver` e ingresar con el usuario y clave `admin:geoserver`
+
+*Fuente:*
+
+* *[GitHub - geoserver/docker: GeoServer docker image](https://github.com/geoserver/docker)*
