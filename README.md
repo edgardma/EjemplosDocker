@@ -241,6 +241,12 @@ Para tener un contenedor con una versión de PostgreSQL, ejecutar la siguiente s
 sudo docker run -d -p 54320:5432 --name posgre-db -e POSTGRES_PASSWORD=secret postgres
 ```
 
+Para instalar una versión específica, se puede especificar la versión que se necesita, por ejemplo:
+
+```bash
+sudo docker run -d -p 54320:5432 --name posgre-db -e POSTGRES_PASSWORD=secret postgres:15.3
+```
+
 En donde:
 
 - `-d`: para ejecutar el contenedor en segundo plano.
@@ -276,7 +282,7 @@ Y para conectarse al servidor, utilizar la siguiente sentencia:
 psql -h 127.0.0.1 -p 54320 -U postgres postgres
 ```
 
-Para validar se puede ejecutar la sentencia `\dt`.
+Para validar se puede ejecutar la sentencia `\dt` o `SELECT version();`.
 
 *Fuente:*
 
