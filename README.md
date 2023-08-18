@@ -307,7 +307,7 @@ sudo docker run -p 27017:27017 --name mongodb-desa -d arm64v8/mongo:6.0.5-jammy
 
 ## GeoServer
 
-Para tener un contenedor con GeoServer se debe ejecutar la siguiente sentencia:
+Para tener un contenedor con `GeoServer` se debe ejecutar la siguiente sentencia:
 
 ```bash
 sudo docker pull docker.osgeo.org/geoserver:2.23.1
@@ -320,3 +320,27 @@ Para validar, se puede ingresar en un navegador a la siguiente ruta `http://loca
 *Fuente:*
 
 * *[GitHub - geoserver/docker: GeoServer docker image](https://github.com/geoserver/docker)*
+
+## GitLab
+
+Para tener un contenedor con GitLab se debe ejecutar la siguiente sentencia:
+
+```bash
+sudo docker pull gitlab/gitlab-ce
+
+sudo docker run -p 8083:80 -p 8443:443 --name gitlabdes -d gitlab/gitlab-ce:latest
+```
+
+Parar validar, se puede ingresar en un navegador a la siguiente ruta local: `http://localhost:8083/users/sign_in`.
+
+Seguidamente, se debe cambiar la clave por defecto del usuario `root` ejecutando las siguientes sentencias:
+
+```bash
+docker exec -it e0c3ba8e /bin/bash
+
+gitlab-rake 'gitlab:password:reset'
+```
+
+Ingresar el nombre del usuario, en este caso `root`, luego ingresar la clave y repetir la clave ingresada.
+
+Finalmente, ingresar nuevamente a la ruta ingresando el usuario `roor` con su nueva clave.
