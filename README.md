@@ -343,4 +343,4 @@ gitlab-rake 'gitlab:password:reset'
 
 Ingresar el nombre del usuario, en este caso `root`, luego ingresar la clave y repetir la clave ingresada.
 
-Finalmente, ingresar nuevamente a la ruta ingresando el usuario `roor` con su nueva clave.
+Finalmente, ingresar nuevamente a la ruta ingresando el usuario `root` con su nueva clave.
