@@ -323,7 +323,7 @@ Para validar, se puede ingresar en un navegador a la siguiente ruta `http://loca
 
 ## GitLab
 
-Para tener un contenedor con GitLab se debe ejecutar la siguiente sentencia:
+Para tener un contenedor con GitLab se debe ejecutar las siguientes sentencias:
 
 ```bash
 sudo docker pull gitlab/gitlab-ce
@@ -344,3 +344,13 @@ gitlab-rake 'gitlab:password:reset'
 Ingresar el nombre del usuario, en este caso `root`, luego ingresar la clave y repetir la clave ingresada.
 
 Finalmente, ingresar nuevamente a la ruta ingresando el usuario `root` con su nueva clave.
+
+## SonarQube
+
+Para tener un contenedor con SobarQube se debe ejecutar las siguientes sentencias:
+
+```bash
+docker pull sonarqube:community
+
+sudo docker run -p 9000:9000 --name sonardes -d sonarqube:lts-community
+```
