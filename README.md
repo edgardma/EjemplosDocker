@@ -315,7 +315,7 @@ sudo docker pull docker.osgeo.org/geoserver:2.23.1
 sudo docker run -d -p 8081:8080 --name geoserver docker.osgeo.org/geoserver:2.23.1
 ```
 
-Para validar, se puede ingresar en un navegador a la siguiente ruta `http://localhost:8081/geoserver` e ingresar con el usuario y clave `admin:geoserver`
+Para validar, se puede ingresar en un navegador a la siguiente ruta `http://localhost:8081/geoserver` e ingresar con el usuario y clave por defecto `admin:geoserver`
 
 *Fuente:*
 
