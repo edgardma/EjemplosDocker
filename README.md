@@ -61,6 +61,9 @@ sudo docker run --name hola hello-world
 sudo docker image ls
 sudo docker images
 
+## Listar los contenedores pero con algunas columnas
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}"
+
 ## Ejecutar un contenedor con NGinx:
 sudo docker run -p 88:80 nginx
 
@@ -69,6 +72,7 @@ sudo docker run -p 88:80 -d nginx
 
 ## Para ver el log de un contenedor:
 sudo docker logs [ID_CONTENEDOR]
+sudo docker logs -f [ID_CONTENEDOR]
 
 ## Para ver el log de un contenedor en línea:
 sudo docker logs [ID_CONTENEDOR] -f
@@ -91,6 +95,7 @@ sudo docker start [ID_CONTENEDOR]/[NOMBRE_CONTENEDOR]
 
 ## Descargar la última versión de la imagen de Alpine:
 sudo docker pull alpine
+
 ```
 
 ## Ejemplos de contenedores Docker:
