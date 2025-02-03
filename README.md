@@ -95,6 +95,15 @@ sudo docker start [ID_CONTENEDOR]/[NOMBRE_CONTENEDOR]
 ## Descargar la última versión de la imagen de Alpine:
 sudo docker pull alpine
 
+## Listar el espacio utilizado por los contenedores
+docker ps -a --format "{{.Names}} {{.Size}}"
+
+## Listar el espacio utilizado en Docker
+sudo docker df
+
+## Limpiar el espacio utilizado en Docker
+sudo docker prune
+
 ```
 
 ## Ejemplos de contenedores Docker:
